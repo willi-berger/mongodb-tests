@@ -12,9 +12,9 @@ $ docker run --name mytest-mongo -d mongo:latest
 ```
 listens on the standard MongoDB port *27017*.
 Connect to a docker network with
-
+```
 docker network connect docker-bridge-network mytest-mongo
-
+```
 
 
  ## Connect to DB
@@ -57,12 +57,12 @@ $ mongoimport --db=mytestdb --collection=zips  zips.json
 
 
 ### Aggregation
-
+```
 db.zips.aggregate( [
    { $group: { _id: "$state", totalPop: { $sum: "$pop" } } },
    { $match: { totalPop: { $gte: 10*1000*1000 } } }
 ] )
-
+```
 
 
 ## Python client
